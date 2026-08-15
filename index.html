@@ -179,9 +179,9 @@ footer{border-top:1px solid var(--line);padding:34px 0 40px}
       <span class="w-note">02 — Casos reales</span>
     </div>
     <div class="w-grid">
-      <a class="w-item full rv" href="#contacto">
-        <div class="w-visual"><img src="https://picsum.photos/seed/valentina/1600/900" alt="Valentina Ríos"></div>
-        <div class="w-cap"><h3>Valentina Ríos — influencer virtual 100% IA</h3><span class="w-metric">8M vistas/mes</span></div>
+      <a class="w-item rv" href="#contacto">
+        <div class="w-visual" style="aspect-ratio:3/4"><img src="valentina.jpg" alt="Valentina Ríos — influencer virtual 100% IA"></div>
+        <div class="w-cap"><h3>Valentina Ríos — influencer 100% IA</h3><span class="w-metric">8M vistas/mes</span></div>
       </a>
       <a class="w-item rv" href="#contacto">
         <div class="w-visual"><img src="https://picsum.photos/seed/educacion/1400/900" alt="IA en educación"></div>
@@ -191,9 +191,13 @@ footer{border-top:1px solid var(--line);padding:34px 0 40px}
         <div class="w-visual"><img src="https://picsum.photos/seed/agentes/1400/900" alt="Agentes de IA"></div>
         <div class="w-cap"><h3>Agentes para negocios</h3><span class="w-metric">Bots + flujos</span></div>
       </a>
-      <a class="w-item full rv" href="#contacto">
+      <a class="w-item rv" href="#contacto">
         <div class="w-visual"><img src="https://picsum.photos/seed/glowon/1600/900" alt="Glow On"></div>
         <div class="w-cap"><h3>Marketing y contenido desde Glow On</h3><span class="w-metric">3 mercados</span></div>
+      </a>
+      <a class="w-item full rv" href="#contacto">
+        <div class="w-visual"><img src="rosita.jpg" alt="ROSITA — asistente personal de IA"></div>
+        <div class="w-cap"><h3>ROSITA — mi asistente personal de IA</h3><span class="w-metric">Siempre activa · Telegram</span></div>
       </a>
     </div>
   </div>
@@ -283,10 +287,12 @@ cv.width=W;cv.height=H;
 const CX=W/2,CY=H/2;
 const nodes=[
   {label:'Segundo cerebro',r:26,core:true},
-  {label:'ROSITA',r:13},{label:'Agentes',r:14},{label:'Automatización',r:13},
+  {label:'ROSITA',r:20,img:'rosita.jpg'},{label:'Agentes',r:14},{label:'Automatización',r:13},
   {label:'Obsidian',r:13},{label:'Valentina Ríos',r:14},{label:'Contenido IA',r:12},
   {label:'Monitoreo',r:12},{label:'Canales',r:12},
 ];
+const imgs={};
+nodes.forEach(n=>{if(n.img){imgs[n.img]=new Image();imgs[n.img].src=n.img;}});
 const links=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,8],[2,3],[5,6],[0,7],[3,8]];
 const N=nodes.length;
 for(let i=1;i<N;i++){const a=i*2.399963;nodes[i].x=CX+Math.cos(a)*Math.min(W,H)*.36;nodes[i].y=CY+Math.sin(a)*Math.min(W,H)*.30;}
@@ -310,9 +316,17 @@ function draw(){
   }
   nodes.forEach((n,i)=>{
     const on=hover===i||(hover>=0&&links.some(l=>(l[0]===i&&l[1]===hover)||(l[1]===i&&l[0]===hover)));
-    ctx.beginPath();ctx.arc(n.x,n.y,on?n.r*1.25:n.r,0,7);
-    ctx.fillStyle=n.core?`#D97757`:(on?`#D97757`:`#1F1E1D`);
-    ctx.fill();
+    const rr=on?n.r*1.25:n.r;
+    if(n.img&&imgs[n.img]&&imgs[n.img].complete){
+      ctx.save();ctx.beginPath();ctx.arc(n.x,n.y,rr,0,7);ctx.closePath();ctx.clip();
+      ctx.drawImage(imgs[n.img],n.x-rr,n.y-rr,rr*2,rr*2);ctx.restore();
+      ctx.beginPath();ctx.arc(n.x,n.y,rr,0,7);
+      ctx.strokeStyle=on?'#D97757':'rgba(31,30,29,.25)';ctx.lineWidth=on?2:1.2;ctx.stroke();
+    }else{
+      ctx.beginPath();ctx.arc(n.x,n.y,rr,0,7);
+      ctx.fillStyle=n.core?`#D97757`:(on?`#D97757`:`#1F1E1D`);
+      ctx.fill();
+    }
     ctx.font='10px "JetBrains Mono",monospace';
     ctx.textAlign='center';
     ctx.fillStyle=on||n.core?`#1F1E1D`:`#A3A098`;
