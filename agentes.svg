@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#2A2A30"/>
+      <stop offset="100%" stop-color="#17171A"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="30"/></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#glow)"/>
+  <circle cx="400" cy="230" r="120" fill="#B8BDC4" opacity="0.05" filter="url(#blur)"/>
+  <!-- enlaces -->
+  <g stroke="#B8BDC4" stroke-width="1" opacity="0.35">
+    <line x1="400" y1="230" x2="180" y2="140"/>
+    <line x1="400" y1="230" x2="620" y2="150"/>
+    <line x1="400" y1="230" x2="220" y2="360"/>
+    <line x1="400" y1="230" x2="590" y2="370"/>
+    <line x1="400" y1="230" x2="400" y2="120"/>
+    <line x1="180" y1="140" x2="220" y2="360"/>
+    <line x1="620" y1="150" x2="590" y2="370"/>
+    <line x1="400" y1="120" x2="620" y2="150"/>
+    <line x1="400" y1="120" x2="180" y2="140"/>
+    <line x1="220" y1="360" x2="590" y2="370"/>
+  </g>
+  <!-- nodos central -->
+  <circle cx="400" cy="230" r="46" fill="#B8BDC4" opacity="0.16"/>
+  <circle cx="400" cy="230" r="34" fill="#B8BDC4"/>
+  <text x="400" y="239" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#17171A" text-anchor="middle">IA</text>
+  <!-- nodos satelite -->
+  <g fill="#3F3F46">
+    <circle cx="180" cy="140" r="12"/>
+    <circle cx="620" cy="150" r="12"/>
+    <circle cx="220" cy="360" r="12"/>
+    <circle cx="590" cy="370" r="12"/>
+    <circle cx="400" cy="120" r="10"/>
+  </g>
+  <g fill="#D4D8DD">
+    <circle cx="180" cy="140" r="5"/>
+    <circle cx="620" cy="150" r="5"/>
+    <circle cx="220" cy="360" r="5"/>
+    <circle cx="590" cy="370" r="5"/>
+    <circle cx="400" cy="120" r="4"/>
+  </g>
+  <text x="400" y="462" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="6" fill="#63636B" text-anchor="middle">AGENTES · BOTS · AUTOMATIZACIÓN</text>
+</svg>
