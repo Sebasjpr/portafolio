@@ -210,6 +210,33 @@ html.js .hl>span.show{transform:translateY(0)}
 .t-card .t-role{font-size:12px;color:var(--accent)}
 @media(max-width:900px){.t-grid{grid-template-columns:1fr}}
 
+/* RESERVA DE CITA */
+.reserva{padding:130px 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.reserva-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.reserva-l h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.02em;line-height:1.05;margin-bottom:18px}
+.reserva-l h2 em{font-style:italic;color:var(--accent)}
+.reserva-l p{font-size:14px;color:var(--muted);max-width:420px;line-height:1.7}
+.reserva-l .r-points{margin-top:26px;display:flex;flex-direction:column;gap:14px}
+.reserva-l .r-point{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--muted)}
+.reserva-l .r-point b{color:var(--ink);font-weight:500}
+.reserva-l .r-point .r-ic{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:8px;padding:5px 9px;white-space:nowrap;margin-top:2px}
+.r-form{display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);border-radius:16px;padding:30px 28px;background:var(--bg)}
+.r-form label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:7px;display:block}
+.r-form .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.r-form input,.r-form select,.r-form textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:var(--sans);font-size:14px;padding:12px 14px;transition:all .3s;appearance:none}
+.r-form input:focus,.r-form select:focus,.r-form textarea:focus{outline:none;border-color:var(--accent);background:var(--bg3)}
+.r-form input::placeholder,.r-form textarea::placeholder{color:var(--faint)}
+.r-form select option{background:var(--bg2);color:var(--ink)}
+.r-form textarea{resize:vertical;min-height:88px}
+.r-form .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
+.r-form .btn-solid{width:100%;justify-content:center;margin-top:6px;border:none;cursor:pointer;font-family:var(--sans);font-size:14.5px;font-weight:500;padding:15px 22px;border-radius:999px;transition:all .3s}
+.r-status{margin-top:14px;font-size:13.5px;color:var(--muted);display:none;align-items:center;gap:9px}
+.r-status.ok{color:#7FC99B;display:flex}
+.r-status.err{color:#E07B7B;display:flex}
+.r-status .sp{width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:rspin .8s linear infinite}
+@keyframes rspin{to{transform:rotate(360deg)}}
+@media(max-width:800px){.reserva-grid{grid-template-columns:1fr;gap:34px}.r-form .f-row{grid-template-columns:1fr}}
+
 /* CONTACTO */
 .cta{padding:150px 0 120px}
 .cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,9vw,132px);line-height:.95;letter-spacing:-.04em}
@@ -382,9 +409,65 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <span class="w-note">04 — Resultados reales</span>
     </div>
     <div class="t-grid">
-      <div class="t-card rv"><p class="t-quote">“El taller de Johan me cambió la forma de trabajar: en dos semanas ya estaba automatizando tareas que me tomaban horas. Explica la IA en cristiano.”</p><span class="t-who">— Estudiante · Taller de IA aplicada</span><span class="t-role">Nombre pendiente</span></div>
-      <div class="t-card rv rv-d1"><p class="t-quote">“Llegué sin saber por dónde empezar con la IA y salí con un plan claro para mi negocio. La capacitación es práctica, no teoría.”</p><span class="t-who">— Emprendedor · Capacitación 1 a 1</span><span class="t-role">Nombre pendiente</span></div>
-      <div class="t-card rv rv-d2"><p class="t-quote">“Con la asesoría de Johan logramos introducir la IA en nuestros procesos: hoy un agente responde a nuestros clientes y el equipo ahorra horas cada día.”</p><span class="t-who">— Empresa · Adopción de IA</span><span class="t-role">Nombre pendiente</span></div>
+      <div class="t-card rv"><p class="t-quote">“El taller de Johan me cambió la forma de trabajar: en dos semanas ya estaba automatizando tareas que me tomaban horas. Explica la IA en cristiano.”</p><span class="t-who">— Estudiante · Taller de IA aplicada</span><span class="t-role">Estefanía</span></div>
+      <div class="t-card rv rv-d1"><p class="t-quote">“Llegué sin saber por dónde empezar con la IA y salí con un plan claro para mi negocio. La capacitación es práctica, no teoría.”</p><span class="t-who">— Emprendedor · Capacitación 1 a 1</span><span class="t-role">Jair</span></div>
+      <div class="t-card rv rv-d2"><p class="t-quote">“Con la asesoría de Johan logramos introducir la IA en nuestros procesos: hoy un agente responde a nuestros clientes y el equipo ahorra horas cada día.”</p><span class="t-who">— Empresa · Adopción de IA</span><span class="t-role">Víctor</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVA DE CITA -->
+<section class="reserva" id="reserva">
+  <div class="wrap">
+    <div class="reserva-grid">
+      <div class="reserva-l rv">
+        <h2>Reserva tu <em>cita</em></h2>
+        <p>Cuéntame qué quieres automatizar y agendamos una sesión de 20 minutos. Reviso tu proceso y te digo si tiene sentido aplicarle IA — sin compromiso.</p>
+        <div class="r-points">
+          <div class="r-point"><span class="r-ic">01</span><span><b>Evaluación gratis</b> — primera conversación sin costo</span></div>
+          <div class="r-point"><span class="r-ic">02</span><span><b>Enfoque práctico</b> — nada de teoría, solo tu proceso</span></div>
+          <div class="r-point"><span class="r-ic">03</span><span><b>Respuesta rápida</b> — te confirmo por tu canal de contacto</span></div>
+        </div>
+      </div>
+      <form class="r-form rv" id="reservaForm" novalidate>
+        <div>
+          <label for="rNombre">Nombre</label>
+          <input id="rNombre" name="nombre" type="text" placeholder="Tu nombre" maxlength="120" required>
+        </div>
+        <div>
+          <label for="rContacto">WhatsApp o correo</label>
+          <input id="rContacto" name="contacto" type="text" placeholder="+57 300 000 0000" maxlength="160" required>
+        </div>
+        <div>
+          <label for="rTema">¿Qué te gustaría automatizar?</label>
+          <select id="rTema" name="tema">
+            <option value="">Elige una opción…</option>
+            <option>Agente que responda clientes</option>
+            <option>Automatizar tareas repetitivas</option>
+            <option>Capacitación de IA para mi equipo</option>
+            <option>Contenido y marketing con IA</option>
+            <option>Segundo cerebro / organización de conocimiento</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="f-row">
+          <div>
+            <label for="rFecha">Fecha preferida</label>
+            <input id="rFecha" name="fecha" type="date">
+          </div>
+          <div>
+            <label for="rHora">Hora preferida</label>
+            <input id="rHora" name="hora" type="time">
+          </div>
+        </div>
+        <div>
+          <label for="rMensaje">Cuéntame más (opcional)</label>
+          <textarea id="rMensaje" name="mensaje" placeholder="¿Qué proceso quieres mejorar?" maxlength="500"></textarea>
+        </div>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-solid" type="submit">Solicitar cita →</button>
+        <div class="r-status" id="rStatus" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -493,6 +576,35 @@ function closeModal(){modal.classList.remove('open');document.body.style.overflo
 document.querySelectorAll('[data-caso]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openModal(el.dataset.caso);}));
 document.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
 addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* reserva de cita → webhook */
+const reservaForm=document.getElementById('reservaForm'),rStatus=document.getElementById('rStatus');
+if(reservaForm){
+  reservaForm.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const nombre=document.getElementById('rNombre').value.trim();
+    const contacto=document.getElementById('rContacto').value.trim();
+    if(!nombre||!contacto){rStatus.className='r-status err';rStatus.textContent='✕ Escribe tu nombre y un medio de contacto.';return;}
+    rStatus.className='r-status';rStatus.innerHTML='<span class="sp"></span>Enviando…';
+    const body={
+      event_type:'reserva',
+      app_token:'jr7Xp2kQ9mZ4vT8nB3wC6sH1',
+      nombre,
+      contacto,
+      tema:document.getElementById('rTema').value,
+      fecha:document.getElementById('rFecha').value,
+      hora:document.getElementById('rHora').value,
+      mensaje:document.getElementById('rMensaje').value.trim(),
+      website:document.querySelector('#reservaForm input[name="website"]').value
+    };
+    try{
+      const r=await fetch('https://depot-concentration-scan-calendars.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const j=await r.json().catch(()=>({}));
+      if(r.ok&&j.status!=='ignored'){rStatus.className='r-status ok';rStatus.textContent='✓ Recibido. Te confirmo por tu WhatsApp o correo.';reservaForm.reset();}
+      else{rStatus.className='r-status err';rStatus.textContent='✕ No se pudo enviar. Escríbeme directo por WhatsApp.';}
+    }catch(err){rStatus.className='r-status err';rStatus.textContent='✕ Sin conexión. Escríbeme directo por WhatsApp.';}
+  });
+}
 </script>
 </body>
 </html>
