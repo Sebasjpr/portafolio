@@ -63,16 +63,15 @@ nav.scrolled{background:rgba(17,17,19,.92);backdrop-filter:blur(14px);box-shadow
   .nav-back.show{opacity:1;pointer-events:auto}
 }
 
-/* HERO */
-.hero{position:relative;padding:170px 0 80px;overflow:hidden}
-.hero:before{content:"";position:absolute;top:-340px;right:-280px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(184,189,196,.1),transparent 62%)}
-.hero-orb{position:absolute;right:-30px;top:90px;width:min(300px,30vw);aspect-ratio:1/1;object-fit:cover;opacity:.95;pointer-events:none;animation:orbFloat 22s ease-in-out infinite;mix-blend-mode:screen;border-radius:50%}
-@keyframes orbFloat{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-18px) rotate(90deg)}50%{transform:translateY(6px) rotate(180deg)}75%{transform:translateY(-12px) rotate(270deg)}}
-@media(max-width:900px){.hero{padding:130px 0 60px}.hero-orb{width:min(170px,40vw);right:-14px;top:110px;opacity:.5}}
+/* HERO — IA viva */
+.hero{position:relative;padding:170px 0 80px;overflow:hidden;background:radial-gradient(120% 90% at 70% 0%,#141419 0%,var(--bg) 55%)}
+.hero:before{content:"";position:absolute;top:-340px;right:-280px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(113,112,255,.14),transparent 62%)}
+.hero-net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
 .hero-kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:36px}
-.hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:#7170ff;box-shadow:0 0 12px rgba(113,112,255,.9)}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9.5vw,148px);line-height:.95;letter-spacing:-.04em;max-width:1100px}
-.hero h1 em{font-style:italic;color:var(--accent)}
+.hero h1 em{font-style:italic;color:#9A99FF;text-shadow:0 0 34px rgba(113,112,255,.35)}
 .hl{display:block;overflow:hidden}
 .hl>span{display:block;transform:none;transition:transform 1.15s var(--ease)}
 html.js .hl>span{transform:translateY(115%)}
@@ -81,10 +80,10 @@ html.js .hl>span.show{transform:translateY(0)}
 .hero-sub b{color:var(--ink);font-weight:500}
 .hero-ctas{display:flex;align-items:center;gap:24px;margin-top:44px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;font-size:14.5px;font-weight:500;transition:all .35s var(--ease);border:1px solid transparent}
-.btn-solid{background:var(--accent);color:#111113}
-.btn-solid:hover{background:var(--accent-d);transform:translateY(-2px);box-shadow:0 16px 34px rgba(184,189,196,.22)}
+.btn-solid{background:#7170ff;color:#fff}
+.btn-solid:hover{background:#8B8AFF;transform:translateY(-2px);box-shadow:0 16px 40px rgba(113,112,255,.35)}
 .btn-ghost{border:1px solid var(--line);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost:hover{border-color:#7170ff;color:#9A99FF}
 .btn-link{color:var(--ink);border-bottom:1px solid var(--line);padding:4px 0;border-radius:0;font-size:15px}
 .btn-link:hover{border-color:var(--accent);color:var(--accent)}
 
@@ -255,7 +254,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 40px}
 html.js .rv{opacity:0;transform:translateY(52px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
 html.js .rv.vis{opacity:1;transform:none}
 html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js .rv-d3{transition-delay:.3s}
-@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-orb{animation:none}}
+@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-net{display:none}}
 </style>
 </head>
 <body>
@@ -276,8 +275,8 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
 
 <main id="main">
 <header class="hero" id="top">
+  <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
   <div class="wrap">
-    <img class="hero-orb" src="anillo-orbit.svg" alt="">
     <div class="hero-kicker"><span class="dot"></span>Johan Pantoja — Consultor de IA</div>
     <h1><span class="hl"><span>Creo <em>sistemas</em></span></span><span class="hl"><span>de IA.</span></span></h1>
     <p class="hero-sub">Diseño <b>agentes, automatizaciones y segundos cerebros</b> para equipos que quieren ahorrar tiempo, organizar conocimiento y crecer.</p>
@@ -506,6 +505,56 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
 
 <script>
 document.documentElement.classList.add('js');
+
+/* HERO — red neuronal viva (canvas) */
+(function(){
+  const cv=document.getElementById('heroNet');if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H,pts=[],mouse={x:-9999,y:-9999},raf=null;
+  const N=70,LINK=150;
+  function size(){const r=cv.getBoundingClientRect();W=cv.width=r.width*devicePixelRatio;H=cv.height=r.height*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);}
+  function init(){
+    size();
+    const rw=cv.getBoundingClientRect().width,rh=cv.getBoundingClientRect().height;
+    pts=Array.from({length:N},()=>({x:Math.random()*rw,y:Math.random()*rh,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+1.1}));
+  }
+  function tick(){
+    const rw=cv.getBoundingClientRect().width,rh=cv.getBoundingClientRect().height;
+    ctx.clearRect(0,0,rw,rh);
+    for(const p of pts){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>rw)p.vx*=-1;
+      if(p.y<0||p.y>rh)p.vy*=-1;
+    }
+    for(let i=0;i<pts.length;i++){
+      const a=pts[i];
+      for(let j=i+1;j<pts.length;j++){
+        const b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+        if(d<LINK){
+          let al=(1-d/LINK)*.16;
+          let col='113,112,255';
+          const dmA=Math.hypot(a.x-mouse.x,a.y-mouse.y),dmB=Math.hypot(b.x-mouse.x,b.y-mouse.y);
+          if(dmA<130||dmB<130){al+=.35;col='160,158,255';}
+          ctx.strokeStyle=`rgba(${col},${al})`;
+          ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+        }
+      }
+    }
+    for(const p of pts){
+      const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);
+      const glow=dm<130;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=glow?'rgba(190,188,255,.95)':'rgba(113,112,255,.55)';
+      ctx.fill();
+      if(glow){ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.2,0,Math.PI*2);ctx.fillStyle='rgba(113,112,255,.10)';ctx.fill();}
+    }
+    raf=requestAnimationFrame(tick);
+  }
+  addEventListener('resize',()=>{size();});
+  const hero=document.getElementById('top');
+  hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+  hero.addEventListener('mouseleave',()=>{mouse.x=-9999;mouse.y=-9999;});
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){init();tick();}else{size();}
+})();
 
 /* menú móvil */
 const burger=document.getElementById('burger'),menu=document.getElementById('navMenu'),back=document.getElementById('navBack');
