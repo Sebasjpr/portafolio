@@ -598,7 +598,7 @@ if(reservaForm){
       website:document.querySelector('#reservaForm input[name="website"]').value
     };
     try{
-      const r=await fetch('https://depot-concentration-scan-calendars.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const r=await fetch('https://makeup-trio-advance-topic.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       const j=await r.json().catch(()=>({}));
       if(r.ok&&j.status!=='ignored'){rStatus.className='r-status ok';rStatus.textContent='✓ Recibido. Te confirmo por tu WhatsApp o correo.';reservaForm.reset();}
       else{rStatus.className='r-status err';rStatus.textContent='✕ No se pudo enviar. Escríbeme directo por WhatsApp.';}
