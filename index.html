@@ -9,30 +9,32 @@
 <meta property="og:description" content="Diseño agentes, automatizaciones y segundos cerebros para equipos. +30M de vistas orgánicas.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sebasjpr.github.io/portafolio/">
-<meta property="og:image" content="https://sebasjpr.github.io/portafolio/johan.jpg">
+<meta property="og:image" content="https://sebasjpr.github.io/portafolio/johan-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Johan Pantoja — Sistemas de IA">
 <meta name="twitter:description" content="Diseño agentes, automatizaciones y segundos cerebros para equipos. +30M de vistas orgánicas.">
-<meta name="twitter:image" content="https://sebasjpr.github.io/portafolio/johan.jpg">
+<meta name="twitter:image" content="https://sebasjpr.github.io/portafolio/johan-og.jpg">
+<meta name="theme-color" content="#111113">
+<meta property="og:locale" content="es_CO">
 <link rel="canonical" href="https://sebasjpr.github.io/portafolio/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Johan Sebastián Pantoja R.","url":"https://sebasjpr.github.io/portafolio/","jobTitle":"Consultor de Inteligencia Artificial","worksFor":[{"@type":"Organization","name":"Are We Humans?"},{"@type":"Organization","name":"Glow On"}],"alumniOf":"Pontificia Universidad Javeriana Cali","sameAs":["https://linkedin.com/in/jspantoja"]}
+{"@context":"https://schema.org","@type":"Person","name":"Johan Sebastián Pantoja R.","url":"https://sebasjpr.github.io/portafolio/","image":"https://sebasjpr.github.io/portafolio/johan-og.jpg","jobTitle":"Consultor de Inteligencia Artificial","worksFor":[{"@type":"Organization","name":"Are We Humans?"},{"@type":"Organization","name":"Glow On"}],"alumniOf":"Pontificia Universidad Javeriana Cali","address":{"@type":"PostalAddress","addressLocality":"Cali","addressRegion":"Valle del Cauca","addressCountry":"CO"},"telephone":"+57 301 226 8929","knowsAbout":["Inteligencia Artificial","Automatización de procesos","Agentes de IA","Capacitación"],"sameAs":["https://linkedin.com/in/jspantoja"]}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23B8BDC4'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='54' font-style='italic' fill='%23111113' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#111113; --bg2:#19191C; --bg3:#212125;
-  --ink:#F4F4F5; --muted:#A1A1AA; --faint:#63636B;
+  --ink:#F4F4F5; --muted:#A1A1AA; --faint:#8E8E96;
   --accent:#B8BDC4; --accent-d:#D4D8DD;
   --line:rgba(255,255,255,.1);
   --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
   --ease:cubic-bezier(.23,1,.32,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:88px;scrollbar-gutter:stable}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--accent);color:#111113}
 a{color:inherit;text-decoration:none}
@@ -90,8 +92,10 @@ html.js .hl>span.show{transform:translateY(0)}
 .hero-sub{margin-top:40px;font-size:17px;color:var(--muted);max-width:470px}
 .hero-sub b{color:var(--ink);font-weight:500}
 .hero-ctas{display:flex;align-items:center;gap:24px;margin-top:44px;flex-wrap:wrap}
+.cta-note{margin-top:18px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.cta-note .dot{width:6px;height:6px;border-radius:50%;background:#7FC99B;flex:none}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;font-size:14.5px;font-weight:500;transition:all .35s var(--ease);border:1px solid transparent}
-.btn-solid{background:#7170ff;color:#fff}
+.btn-solid{background:#5B59E8;color:#fff}
 .btn-solid:hover{background:#8B8AFF;transform:translateY(-2px);box-shadow:0 16px 40px rgba(113,112,255,.35)}
 .btn-ghost{border:1px solid var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:#7170ff;color:#9A99FF}
@@ -150,7 +154,7 @@ html.js .hl>span.show{transform:translateY(0)}
 /* TRABAJO / CASOS */
 .work{padding:130px 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .w-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px 40px}
-.w-item{display:block;cursor:pointer}
+.w-item{display:block;cursor:pointer;background:none;border:none;padding:0;font:inherit;text-align:left;width:100%;color:inherit}
 .w-visual{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--bg3);border-radius:10px}
 .w-visual img,.w-visual video{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--ease)}
 @media(hover:hover) and (pointer:fine){.w-item:hover .w-visual img,.w-item:hover .w-visual video{transform:scale(1.05)}}
@@ -220,11 +224,17 @@ html.js .hl>span.show{transform:translateY(0)}
 .r-form input::placeholder,.r-form textarea::placeholder{color:var(--faint)}
 .r-form select option{background:var(--bg2);color:var(--ink)}
 .r-form textarea{resize:vertical;min-height:88px}
+.r-consent{display:flex;align-items:flex-start;gap:10px;font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--muted);text-transform:none;letter-spacing:0;margin:0;cursor:pointer}
+.r-consent input{width:auto;margin-top:2px;padding:0;background:none;border:none;appearance:auto;accent-color:#7170ff;flex:none}
+.r-consent a{color:var(--accent);text-decoration:underline}
+.privacy-note{margin-top:4px;font-size:12px}
+.privacy-note summary{font-size:11.5px;cursor:pointer;color:var(--muted)}
 .r-form .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
 .r-form .btn-solid{width:100%;justify-content:center;margin-top:6px;border:none;cursor:pointer;font-family:var(--sans);font-size:14.5px;font-weight:500;padding:15px 22px;border-radius:999px;transition:all .3s}
 .r-status{margin-top:14px;font-size:13.5px;color:var(--muted);display:none;align-items:center;gap:9px}
 .r-status.ok{color:#7FC99B;display:flex}
 .r-status.err{color:#E07B7B;display:flex}
+.r-status a{color:inherit;text-decoration:underline;font-weight:500}
 .r-status .sp{width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:rspin .8s linear infinite}
 @keyframes rspin{to{transform:rotate(360deg)}}
 @media(max-width:800px){.reserva-grid{grid-template-columns:1fr;gap:34px}.r-form .f-row{grid-template-columns:1fr}}
@@ -247,7 +257,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 40px}
 html.js .rv{opacity:0;transform:translateY(52px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
 html.js .rv.vis{opacity:1;transform:none}
 html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js .rv-d3{transition-delay:.3s}
-@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-net{display:none}.hero-chip{display:none}}
+@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}html{scroll-behavior:auto}.g-word{animation:none}.hero-chip{animation:none}.hero-net{display:none}}
 </style>
 </head>
 <body>
@@ -263,7 +273,7 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
     <a href="#testimonios">Testimonios</a>
     <a class="nav-cta" href="https://wa.me/573012268929?text=Hola%20Johan%2C%20quiero%20evaluar%20mi%20proceso%20con%20IA" target="_blank" rel="noopener">Evaluemos tu proceso</a>
   </div>
-  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">☰</button>
 </nav>
 
 <main id="main">
@@ -280,6 +290,7 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <a class="btn btn-solid" href="#reserva">Agenda tu evaluación gratis de 20 min →</a>
       <a class="btn btn-ghost" href="#trabajo">Ver casos con resultados</a>
     </div>
+    <p class="cta-note"><span class="dot"></span>+30M de vistas orgánicas · respuesta en menos de 24h</p>
   </div>
 </header>
 
@@ -290,7 +301,7 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">30M<sup>+</sup></div><div class="lbl">vistas orgánicas en <b>TikTok</b>, sin pauta</div></a>
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">15M<sup>+</sup></div><div class="lbl">vistas orgánicas en <b>Instagram</b></div></a>
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">200K<sup>+</sup></div><div class="lbl"><b>seguidores</b> construidos orgánicamente</div></a>
-      <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">8M</div><div class="lbl">vistas en 1 mes — <b>Valentina Ríos</b> (100% IA)</div></a>
+      <a class="m" href="#trabajo" data-caso="valentina" aria-label="Ver caso Valentina Ríos"><div class="num">8M</div><div class="lbl">vistas en 1 mes — <b>Valentina Ríos</b> (100% IA)</div></a>
     </div>
   </div>
 </section>
@@ -347,30 +358,30 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <span class="w-note">03 — Problema → solución → resultado</span>
     </div>
     <div class="w-grid">
-      <a class="w-item rv" data-caso="valentina" href="#" aria-label="Ver caso Valentina Ríos">
-        <div class="w-visual"><video src="valentina-loop.mp4" poster="valentina.jpg" autoplay="" muted="" loop="" playsinline=""></video><span class="w-open">Ver caso →</span></div>
+      <button class="w-item rv" data-caso="valentina" aria-label="Ver caso Valentina Ríos" type="button">
+        <div class="w-visual"><video src="valentina-loop.mp4" poster="valentina.jpg" autoplay="" muted="" loop="" playsinline="" aria-hidden="true" tabindex="-1"></video><span class="w-open">Ver caso →</span></div>
         <div class="w-cap"><h3>Valentina Ríos</h3><span class="w-metric">8M vistas/mes</span><div class="w-ba"><span class="ba-before">Producción manual</span><span class="ba-arrow">→</span><span class="ba-after">8M/mes · 100% IA</span></div></div>
-      </a>
-      <a class="w-item rv rv-d1" data-caso="taller" href="#" aria-label="Ver caso Taller de implementación">
+      </button>
+      <button class="w-item rv rv-d1" data-caso="taller" aria-label="Ver caso Taller de implementación" type="button">
         <div class="w-visual"><img src="webinar.jpg" alt="Taller de implementación de IA" loading="lazy" style="object-position:center 34%"><span class="w-open">Ver caso →</span></div>
         <div class="w-cap"><h3>Taller de implementación de IA</h3><span class="w-metric">Negocios reales</span><div class="w-ba"><span class="ba-before">Sin plan de IA</span><span class="ba-arrow">→</span><span class="ba-after">100% salen con plan</span></div></div>
-      </a>
-      <a class="w-item rv rv-d2" data-caso="rosita" href="#" aria-label="Ver caso ROSITA">
+      </button>
+      <button class="w-item rv rv-d2" data-caso="rosita" aria-label="Ver caso ROSITA" type="button">
         <div class="w-visual"><img src="rosita.jpg" alt="ROSITA" loading="lazy" style="object-position:center 24%"><span class="w-open">Ver caso →</span></div>
         <div class="w-cap"><h3>ROSITA</h3><span class="w-metric">Siempre activa</span><div class="w-ba"><span class="ba-before">Info dispersa</span><span class="ba-arrow">→</span><span class="ba-after">Asistente 24/7</span></div></div>
-      </a>
-      <a class="w-item rv" data-caso="agentes" href="#" aria-label="Ver caso Agentes para negocios">
+      </button>
+      <button class="w-item rv" data-caso="agentes" aria-label="Ver caso Agentes para negocios" type="button">
         <div class="w-visual"><img src="agentes-v2.webp" alt="Agentes para negocios" loading="lazy"><span class="w-open">Ver caso →</span></div>
         <div class="w-cap"><h3>Agentes para negocios</h3><span class="w-metric">Bots + flujos</span><div class="w-ba"><span class="ba-before">Tareas a mano</span><span class="ba-arrow">→</span><span class="ba-after">Horas ahorradas/semana</span></div></div>
-      </a>
-      <a class="w-item rv rv-d1" data-caso="glowon" href="#" aria-label="Ver caso Glow On">
+      </button>
+      <button class="w-item rv rv-d1" data-caso="glowon" aria-label="Ver caso Glow On" type="button">
         <div class="w-visual"><img src="glowon-v2.webp" alt="Glow On" loading="lazy"><span class="w-open">Ver caso →</span></div>
         <div class="w-cap"><h3>Glow On</h3><span class="w-metric">3 mercados</span><div class="w-ba"><span class="ba-before">Contenido manual</span><span class="ba-arrow">→</span><span class="ba-after">Estrategia con IA</span></div></div>
-      </a>
-      <a class="w-item rv rv-d2" data-caso="cerebro" href="#" aria-label="Ver caso Segundo cerebro">
+      </button>
+      <button class="w-item rv rv-d2" data-caso="cerebro" aria-label="Ver caso Segundo cerebro" type="button">
         <div class="w-visual"><img src="cerebro-v2.webp" alt="Segundo cerebro" loading="lazy"><span class="w-open">Ver caso →</span></div>
         <div class="w-cap"><h3>Segundo cerebro</h3><span class="w-metric">Obsidian</span><div class="w-ba"><span class="ba-before">Conocimiento disperso</span><span class="ba-arrow">→</span><span class="ba-after">Todo conectado</span></div></div>
-      </a>
+      </button>
     </div>
   </div>
 </section>
@@ -406,7 +417,7 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <form class="r-form rv" id="reservaForm" novalidate>
         <div>
           <label for="rNombre">Nombre</label>
-          <input id="rNombre" name="nombre" type="text" placeholder="Tu nombre" maxlength="120" required>
+          <input id="rNombre" name="nombre" type="text" placeholder="Tu nombre" maxlength="120" autocomplete="name" required>
         </div>
         <div>
           <label for="rContacto">WhatsApp o correo</label>
@@ -438,6 +449,8 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
           <label for="rMensaje">Cuéntame más (opcional)</label>
           <textarea id="rMensaje" name="mensaje" placeholder="¿Qué proceso quieres mejorar?" maxlength="500"></textarea>
         </div>
+        <label class="r-consent"><input type="checkbox" id="rConsent" required> Autorizo el tratamiento de mis datos personales únicamente para responder a esta solicitud.</label>
+        <details class="privacy-note"><summary>¿Qué hago con tus datos?</summary><span>Los uso solo para contactarte sobre esta cita. No los comparto con terceros ni para publicidad. Puedes pedirme su eliminación cuando quieras (Ley 1581 de 2012, Colombia).</span></details>
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn btn-solid" type="submit">Solicitar cita →</button>
         <div class="r-status" id="rStatus" role="status" aria-live="polite"></div>
@@ -486,14 +499,13 @@ document.documentElement.classList.add('js');
   const cv=document.getElementById('heroNet');if(!cv)return;
   const ctx=cv.getContext('2d');let W,H,pts=[],mouse={x:-9999,y:-9999},raf=null;
   const N=70,LINK=150;
-  function size(){const r=cv.getBoundingClientRect();W=cv.width=r.width*devicePixelRatio;H=cv.height=r.height*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);}
+  let rw=0,rh=0;const DPR_MAX=2;
+  function size(){const r=cv.getBoundingClientRect();rw=r.width;rh=r.height;const dpr=Math.min(devicePixelRatio||1,DPR_MAX);W=cv.width=rw*dpr;H=cv.height=rh*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
   function init(){
     size();
-    const rw=cv.getBoundingClientRect().width,rh=cv.getBoundingClientRect().height;
     pts=Array.from({length:N},()=>({x:Math.random()*rw,y:Math.random()*rh,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+1.1}));
   }
   function tick(){
-    const rw=cv.getBoundingClientRect().width,rh=cv.getBoundingClientRect().height;
     ctx.clearRect(0,0,rw,rh);
     for(const p of pts){
       p.x+=p.vx;p.y+=p.vy;
@@ -533,7 +545,7 @@ document.documentElement.classList.add('js');
 
 /* menú móvil */
 const burger=document.getElementById('burger'),menu=document.getElementById('navMenu'),back=document.getElementById('navBack');
-function toggleMenu(force){const open=force!==undefined?force:!menu.classList.contains('open');menu.classList.toggle('open',open);back.classList.toggle('show',open);burger.textContent=open?'✕':'☰';burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');}
+function toggleMenu(force){const open=force!==undefined?force:!menu.classList.contains('open');menu.classList.toggle('open',open);back.classList.toggle('show',open);burger.textContent=open?'✕':'☰';burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');burger.setAttribute('aria-expanded',open?'true':'false');}
 burger.addEventListener('click',()=>toggleMenu());
 back.addEventListener('click',()=>toggleMenu(false));
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
@@ -584,43 +596,45 @@ cerebro:{k:'CASO — SEGUNDO CEREBRO',t:'Conocimiento <em>organizado y conectado
 ],result:['1','sistema para todo tu conocimiento'],cta:'Organiza tu conocimiento con IA'},
 };
 const modal=document.getElementById('modal'),mContent=document.getElementById('mContent');
+let lastFocus=null;
 function openModal(k){const c=casos[k];if(!c)return;
+  lastFocus=document.activeElement;
   mContent.innerHTML='<div class="m-kicker">'+c.k+'</div><h3 id="mTitle">'+c.t+'</h3>'+
     c.sections.map(s=>'<div class="m-sec"><h4>'+s[0]+'</h4><p>'+s[1]+'</p></div>').join('')+
     '<div class="m-result"><span class="r-num">'+c.result[0]+'</span><span class="r-lbl">'+c.result[1]+'</span></div>'+
-    '<a class="btn btn-solid m-cta" href="https://wa.me/573012268929?text=Hola%20Johan%2C%20'+(c.cta.split(' ').join('%20'))+'" target="_blank" rel="noopener">'+c.cta+'</a>';
-  modal.classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+    '<a class="btn btn-solid m-cta" href="https://wa.me/573012268929?text=Hola%20Johan%2C%20'+encodeURIComponent(c.cta)+'" target="_blank" rel="noopener">'+c.cta+'</a>';
+  modal.classList.add('open');document.body.style.overflow='hidden';const cBtn=modal.querySelector('.modal-close');if(cBtn)cBtn.focus();}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
 document.querySelectorAll('[data-caso]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openModal(el.dataset.caso);}));
 document.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
-addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();if(menu.classList.contains('open'))toggleMenu(false);}if(e.key==='Tab'&&modal.classList.contains('open')){const f=modal.querySelectorAll('button,a[href],input,select,textarea,[tabindex]:not([tabindex="-1"])');if(f.length){const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}});
 
 /* reserva de cita → webhook */
 const reservaForm=document.getElementById('reservaForm'),rStatus=document.getElementById('rStatus');
 if(reservaForm){
+  const consent=document.getElementById('rConsent');
+  const WA='https://wa.me/573012268929?text=';
+  const waFallback='<a href="'+WA+'Hola%20Johan%2C%20no%20pude%20enviar%20el%20formulario%20de%20cita" target="_blank" rel="noopener">Escríbeme directo por WhatsApp</a>';
   reservaForm.addEventListener('submit',async e=>{
     e.preventDefault();
     const nombre=document.getElementById('rNombre').value.trim();
     const contacto=document.getElementById('rContacto').value.trim();
-    if(!nombre||!contacto){rStatus.className='r-status err';rStatus.textContent='✕ Escribe tu nombre y un medio de contacto.';return;}
+    const fecha=document.getElementById('rFecha');
+    if(!nombre||!contacto){rStatus.className='r-status err';rStatus.innerHTML='✕ Escribe tu nombre y un medio de contacto.';return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contacto)&&!/^\+?[\d\s\-().]{7,}$/.test(contacto)){rStatus.className='r-status err';rStatus.textContent='✕ Escribe un WhatsApp o correo válido.';return;}
+    if(consent&&!consent.checked){rStatus.className='r-status err';rStatus.textContent='✕ Marca la casilla de autorización de datos.';return;}
+    if(fecha){fecha.min=new Date().toISOString().split('T')[0];if(fecha.value&&fecha.value<fecha.min){rStatus.className='r-status err';rStatus.textContent='✕ La fecha no puede estar en el pasado.';return;}}
     rStatus.className='r-status';rStatus.innerHTML='<span class="sp"></span>Enviando…';
-    const body={
-      event_type:'reserva',
-      app_token:'jr7Xp2kQ9mZ4vT8nB3wC6sH1',
-      nombre,
-      contacto,
-      tema:document.getElementById('rTema').value,
-      fecha:document.getElementById('rFecha').value,
-      hora:document.getElementById('rHora').value,
-      mensaje:document.getElementById('rMensaje').value.trim(),
-      website:document.querySelector('#reservaForm input[name="website"]').value
-    };
+    const body={event_type:'reserva',app_token:'jr7Xp2kQ9mZ4vT8nB3wC6sH1',nombre,contacto,tema:document.getElementById('rTema').value,fecha:document.getElementById('rFecha').value,hora:document.getElementById('rHora').value,mensaje:document.getElementById('rMensaje').value.trim(),website:document.querySelector('#reservaForm input[name="website"]').value};
+    const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),10000);
     try{
-      const r=await fetch('https://gordon-essentials-hiring-buses.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
-      const j=await r.json().catch(()=>({}));
-      if(r.ok&&j.status!=='ignored'){rStatus.className='r-status ok';rStatus.textContent='✓ Recibido. Te confirmo por tu WhatsApp o correo.';reservaForm.reset();}
-      else{rStatus.className='r-status err';rStatus.textContent='✕ No se pudo enviar. Escríbeme directo por WhatsApp.';}
-    }catch(err){rStatus.className='r-status err';rStatus.textContent='✕ Sin conexión. Escríbeme directo por WhatsApp.';}
+      const r=await fetch('https://gordon-essentials-hiring-buses.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:ctl.signal});
+      const ct=(r.headers.get('content-type')||'');const j=await r.json().catch(()=>null);
+      const ok=r.ok&&(!ct.includes('json')||j===null||j.status!=='ignored');
+      if(ok){rStatus.className='r-status ok';rStatus.innerHTML='✓ Recibido. Te confirmo por tu WhatsApp o correo. <a href="'+WA+'Hola%20Johan%2C%20te%20escribo%20por%20mi%20cita" target="_blank" rel="noopener">¿Demora? Escríbeme ahora</a>';reservaForm.reset();}
+      else{rStatus.className='r-status err';rStatus.innerHTML='✕ No se pudo enviar. '+waFallback+'.';}
+    }catch(err){rStatus.className='r-status err';rStatus.innerHTML='✕ Sin conexión. '+waFallback+'.';}
+    finally{clearTimeout(t);}
   });
 }
 </script>
