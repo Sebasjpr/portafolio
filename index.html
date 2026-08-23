@@ -110,7 +110,21 @@ html.js .hl>span.show{transform:translateY(0)}
 .m a:hover .num{color:var(--accent)}
 @media(max-width:900px){.m-row{grid-template-columns:repeat(2,1fr);gap:36px 0}.m{border-right:none;padding-right:0;margin-right:0}}
 
-/* GRÁFICA — segundo cerebro */
+/* SOBRE MÍ */
+.about{padding:130px 0;background:var(--bg);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:center}
+.about-photo{position:relative}
+.about-photo::before{content:"";position:absolute;inset:-12px;border-radius:30px;background:radial-gradient(circle at 30% 25%,rgba(113,112,255,.38),transparent 62%);filter:blur(26px);z-index:-1}
+.about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;border:1px solid rgba(255,255,255,.12)}
+.about-note{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px}
+.about h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.02em;margin-bottom:24px}
+.about h2 em{font-style:italic;color:var(--accent)}
+.about-text{font-size:16px;color:var(--muted);line-height:1.78;max-width:660px}
+.about-text b{color:var(--ink);font-weight:500}
+.about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.a-chip{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#D4D4D8;border:1px solid var(--line);border-radius:999px;padding:9px 15px;background:var(--bg2)}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:44px}.about-photo{max-width:340px}}
+
 /* SERVICIOS — 3 rutas + capacidades */
 .services{padding:130px 0}
 .w-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:30px;flex-wrap:wrap}
@@ -243,6 +257,7 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
 <nav id="nav">
   <a class="logo" href="#top">Johan Pantoja</a>
   <div class="nav-r" id="navMenu">
+    <a href="#sobre-mi">Sobre mí</a>
     <a href="#servicios">Servicios</a>
     <a href="#trabajo">Casos</a>
     <a href="#testimonios">Testimonios</a>
@@ -276,6 +291,29 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">15M<sup>+</sup></div><div class="lbl">vistas orgánicas en <b>Instagram</b></div></a>
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">200K<sup>+</sup></div><div class="lbl"><b>seguidores</b> construidos orgánicamente</div></a>
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">8M</div><div class="lbl">vistas en 1 mes — <b>Valentina Ríos</b> (100% IA)</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about" id="sobre-mi">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo rv">
+        <img src="johan.jpg" alt="Johan Pantoja — consultor de IA" loading="lazy">
+      </div>
+      <div class="about-body rv rv-d1">
+        <span class="about-note">01 — Quién soy</span>
+        <h2>Quién <em>soy</em></h2>
+        <p class="about-text">Soy Johan Pantoja, <b>profesional en negocios internacionales con especialización en IA</b> y experiencia como empresario. Pasé años creando contenido que hoy suma más de <b>30 millones de vistas en TikTok</b> y 15 en Instagram — eso me enseñó qué necesita una marca para crecer. Hoy diseño agentes y automatizaciones para negocios reales y capacito equipos para aplicar IA desde la semana uno. Mi regla: la IA no reemplaza personas, reemplaza tareas repetitivas.</p>
+        <div class="about-chips">
+          <span class="a-chip">Empresario</span>
+          <span class="a-chip">Negocios internacionales</span>
+          <span class="a-chip">Especialista en IA</span>
+          <span class="a-chip">30M+ vistas TikTok</span>
+          <span class="a-chip">Capacitador</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -578,7 +616,7 @@ if(reservaForm){
       website:document.querySelector('#reservaForm input[name="website"]').value
     };
     try{
-      const r=await fetch('https://makeup-trio-advance-topic.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const r=await fetch('https://gordon-essentials-hiring-buses.trycloudflare.com/webhooks/reserva-cita',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       const j=await r.json().catch(()=>({}));
       if(r.ok&&j.status!=='ignored'){rStatus.className='r-status ok';rStatus.textContent='✓ Recibido. Te confirmo por tu WhatsApp o correo.';reservaForm.reset();}
       else{rStatus.className='r-status err';rStatus.textContent='✕ No se pudo enviar. Escríbeme directo por WhatsApp.';}
