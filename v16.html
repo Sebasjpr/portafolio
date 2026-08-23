@@ -67,15 +67,6 @@ nav.scrolled{background:rgba(17,17,19,.92);backdrop-filter:blur(14px);box-shadow
 .hero{position:relative;padding:170px 0 80px;overflow:hidden;background:radial-gradient(120% 90% at 70% 0%,#141419 0%,var(--bg) 55%)}
 .hero:before{content:"";position:absolute;top:-340px;right:-280px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(113,112,255,.14),transparent 62%)}
 .hero-net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.hero-chip{position:absolute;display:flex;align-items:center;gap:9px;padding:11px 17px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(17,17,19,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:13px;color:#D4D4D8;z-index:1;box-shadow:0 10px 40px rgba(0,0,0,.4);pointer-events:none}
-.hero-chip svg{width:16px;height:16px;color:#7170ff;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.hc-1{top:15%;right:9%;animation:hcFloat1 7s ease-in-out infinite}
-.hc-2{top:44%;right:2.5%;animation:hcFloat2 8s ease-in-out infinite 1s}
-.hc-3{top:69%;right:11%;animation:hcFloat3 9s ease-in-out infinite 2s}
-@keyframes hcFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes hcFloat2{0%,100%{transform:translateY(-10px)}50%{transform:translateY(8px)}}
-@keyframes hcFloat3{0%,100%{transform:translateY(6px)}50%{transform:translateY(-12px)}}
-@media(max-width:900px){.hero-chip{display:none}}
 .hero .wrap{position:relative;z-index:1}
 .hero-kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:36px}
 .hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:#7170ff;box-shadow:0 0 12px rgba(113,112,255,.9)}
@@ -83,6 +74,8 @@ nav.scrolled{background:rgba(17,17,19,.92);backdrop-filter:blur(14px);box-shadow
 .hero h1 em{font-style:italic;color:#9A99FF;text-shadow:0 0 34px rgba(113,112,255,.35)}
 .hero h1 em.g-word{font-style:italic;color:transparent;background:linear-gradient(100deg,#7170ff 0%,#9A99FF 30%,#ff7ad9 60%,#7170ff 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;animation:gShift 7s linear infinite}
 @keyframes gShift{to{background-position:300% 0}}
+.hero:after{content:"";position:absolute;left:-15%;top:-10%;width:65%;height:90%;z-index:0;pointer-events:none;filter:blur(80px);background:radial-gradient(circle at 30% 40%,rgba(113,112,255,.20),transparent 55%),radial-gradient(circle at 75% 65%,rgba(255,122,217,.10),transparent 50%);animation:auroraDrift 16s ease-in-out infinite alternate}
+@keyframes auroraDrift{from{transform:translate(0,0) rotate(0deg) scale(1)}to{transform:translate(6%,8%) rotate(6deg) scale(1.12)}}
 .hl{display:block;overflow:hidden}
 .hl>span{display:block;transform:none;transition:transform 1.15s var(--ease)}
 html.js .hl>span{transform:translateY(115%)}
@@ -143,16 +136,9 @@ html.js .hl>span.show{transform:translateY(0)}
 .w-item .w-open{position:absolute;left:14px;bottom:14px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#111113;background:var(--accent);padding:8px 14px;border-radius:999px;opacity:0;transform:translateY(8px);transition:all .35s var(--ease)}
 .w-item:hover .w-open{opacity:1;transform:none}
 @media(max-width:800px){.w-item .w-open{opacity:1;transform:none}}
-.w-cap{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.w-cap{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:14px}
 .w-cap h3{font-family:var(--serif);font-weight:400;font-size:18px;letter-spacing:-.01em}
 .w-cap .w-metric{font-family:var(--mono);font-size:10.5px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-.w-ba{flex-basis:100%;display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;margin-top:6px;padding-top:9px;border-top:1px dashed rgba(255,255,255,.09);min-width:0}
-.w-ba .ba-before{color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.w-ba .ba-arrow{color:var(--accent);flex:none}
-.w-ba .ba-after{color:#9A99FF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.w-item{position:relative}
-.w-item::after{content:"";position:absolute;inset:0;border-radius:10px;pointer-events:none;opacity:0;transition:opacity .4s var(--ease);background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(113,112,255,.16),transparent 65%)}
-.w-item:hover::after{opacity:1}
 @media(max-width:900px){.w-grid{grid-template-columns:1fr 1fr;gap:40px 24px}}
 @media(max-width:600px){.w-grid{grid-template-columns:1fr}}
 
@@ -233,7 +219,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 40px}
 html.js .rv{opacity:0;transform:translateY(52px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
 html.js .rv.vis{opacity:1;transform:none}
 html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js .rv-d3{transition-delay:.3s}
-@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-net{display:none}.hero-chip{display:none}}
+@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-net{display:none}.hero:after{animation:none}}
 </style>
 </head>
 <body>
@@ -254,9 +240,6 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
 <main id="main">
 <header class="hero" id="top">
   <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
-  <div class="hero-chip hc-1" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M8 14h.01M16 14h.01"/><path d="M8 17h8"/></svg>Agentes</div>
-  <div class="hero-chip hc-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>Automatización</div>
-  <div class="hero-chip hc-3" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>Contenido</div>
   <div class="wrap">
     <div class="hero-kicker"><span class="dot"></span>Johan Pantoja — Consultor de IA</div>
     <h1><span class="hl"><span>Sistemas de IA</span></span><span class="hl"><span>que <em class="g-word">trabajan por ti</em>.</span></span></h1>
@@ -310,28 +293,28 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
     </div>
     <div class="w-grid">
       <a class="w-item rv" data-caso="valentina" href="#" aria-label="Ver caso Valentina Ríos">
-        <div class="w-visual"><video src="valentina-loop.mp4" poster="valentina.jpg" autoplay="" muted="" loop="" playsinline=""></video><span class="w-open">Ver caso →</span></div>
-        <div class="w-cap"><h3>Valentina Ríos</h3><span class="w-metric">8M vistas/mes</span><div class="w-ba"><span class="ba-before">Producción manual</span><span class="ba-arrow">→</span><span class="ba-after">8M/mes · 100% IA</span></div></div>
+        <div class="w-visual"><video src="valentina-vid.mp4" autoplay muted loop playsinline></video><span class="w-open">Ver caso →</span></div>
+        <div class="w-cap"><h3>Valentina Ríos</h3><span class="w-metric">8M vistas/mes</span></div>
       </a>
       <a class="w-item rv rv-d1" data-caso="taller" href="#" aria-label="Ver caso Taller de implementación">
         <div class="w-visual"><img src="webinar.jpg" alt="Taller de implementación de IA" loading="lazy" style="object-position:center 34%"><span class="w-open">Ver caso →</span></div>
-        <div class="w-cap"><h3>Taller de implementación de IA</h3><span class="w-metric">Negocios reales</span><div class="w-ba"><span class="ba-before">Sin plan de IA</span><span class="ba-arrow">→</span><span class="ba-after">100% salen con plan</span></div></div>
+        <div class="w-cap"><h3>Taller de implementación de IA</h3><span class="w-metric">Negocios reales</span></div>
       </a>
       <a class="w-item rv rv-d2" data-caso="rosita" href="#" aria-label="Ver caso ROSITA">
         <div class="w-visual"><img src="rosita.jpg" alt="ROSITA" loading="lazy" style="object-position:center 24%"><span class="w-open">Ver caso →</span></div>
-        <div class="w-cap"><h3>ROSITA</h3><span class="w-metric">Siempre activa</span><div class="w-ba"><span class="ba-before">Info dispersa</span><span class="ba-arrow">→</span><span class="ba-after">Asistente 24/7</span></div></div>
+        <div class="w-cap"><h3>ROSITA</h3><span class="w-metric">Siempre activa</span></div>
       </a>
       <a class="w-item rv" data-caso="agentes" href="#" aria-label="Ver caso Agentes para negocios">
         <div class="w-visual"><img src="agentes-v2.webp" alt="Agentes para negocios" loading="lazy"><span class="w-open">Ver caso →</span></div>
-        <div class="w-cap"><h3>Agentes para negocios</h3><span class="w-metric">Bots + flujos</span><div class="w-ba"><span class="ba-before">Tareas a mano</span><span class="ba-arrow">→</span><span class="ba-after">Horas ahorradas/semana</span></div></div>
+        <div class="w-cap"><h3>Agentes para negocios</h3><span class="w-metric">Bots + flujos</span></div>
       </a>
       <a class="w-item rv rv-d1" data-caso="glowon" href="#" aria-label="Ver caso Glow On">
         <div class="w-visual"><img src="glowon-v2.webp" alt="Glow On" loading="lazy"><span class="w-open">Ver caso →</span></div>
-        <div class="w-cap"><h3>Glow On</h3><span class="w-metric">3 mercados</span><div class="w-ba"><span class="ba-before">Contenido manual</span><span class="ba-arrow">→</span><span class="ba-after">Estrategia con IA</span></div></div>
+        <div class="w-cap"><h3>Glow On</h3><span class="w-metric">3 mercados</span></div>
       </a>
       <a class="w-item rv rv-d2" data-caso="cerebro" href="#" aria-label="Ver caso Segundo cerebro">
         <div class="w-visual"><img src="cerebro-v2.webp" alt="Segundo cerebro" loading="lazy"><span class="w-open">Ver caso →</span></div>
-        <div class="w-cap"><h3>Segundo cerebro</h3><span class="w-metric">Obsidian</span><div class="w-ba"><span class="ba-before">Conocimiento disperso</span><span class="ba-arrow">→</span><span class="ba-after">Todo conectado</span></div></div>
+        <div class="w-cap"><h3>Segundo cerebro</h3><span class="w-metric">Obsidian</span></div>
       </a>
     </div>
   </div>
@@ -509,11 +492,6 @@ setTimeout(()=>{document.querySelectorAll('.hl>span').forEach((el,i)=>setTimeout
 /* reveals (solo con JS activo) */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-/* spotlight en tarjetas de casos */
-document.querySelectorAll('.w-item').forEach(it=>{
-  it.addEventListener('mousemove',e=>{const r=it.getBoundingClientRect();it.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');it.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')});
-});
 
 /* casos de estudio */
 const casos={
