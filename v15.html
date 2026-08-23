@@ -72,10 +72,6 @@ nav.scrolled{background:rgba(17,17,19,.92);backdrop-filter:blur(14px);box-shadow
 .hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:#7170ff;box-shadow:0 0 12px rgba(113,112,255,.9)}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9.5vw,148px);line-height:.95;letter-spacing:-.04em;max-width:1100px}
 .hero h1 em{font-style:italic;color:#9A99FF;text-shadow:0 0 34px rgba(113,112,255,.35)}
-.hero h1 em.g-word{font-style:italic;color:transparent;background:linear-gradient(100deg,#7170ff 0%,#9A99FF 30%,#ff7ad9 60%,#7170ff 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;animation:gShift 7s linear infinite}
-@keyframes gShift{to{background-position:300% 0}}
-.hero:after{content:"";position:absolute;left:-15%;top:-10%;width:65%;height:90%;z-index:0;pointer-events:none;filter:blur(80px);background:radial-gradient(circle at 30% 40%,rgba(113,112,255,.20),transparent 55%),radial-gradient(circle at 75% 65%,rgba(255,122,217,.10),transparent 50%);animation:auroraDrift 16s ease-in-out infinite alternate}
-@keyframes auroraDrift{from{transform:translate(0,0) rotate(0deg) scale(1)}to{transform:translate(6%,8%) rotate(6deg) scale(1.12)}}
 .hl{display:block;overflow:hidden}
 .hl>span{display:block;transform:none;transition:transform 1.15s var(--ease)}
 html.js .hl>span{transform:translateY(115%)}
@@ -104,6 +100,45 @@ html.js .hl>span.show{transform:translateY(0)}
 @media(max-width:900px){.m-row{grid-template-columns:repeat(2,1fr);gap:36px 0}.m{border-right:none;padding-right:0;margin-right:0}}
 
 /* GRÁFICA — segundo cerebro */
+.graph{padding:130px 0;background:var(--bg2);border-bottom:1px solid var(--line)}
+.g-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:34px;gap:30px;flex-wrap:wrap}
+.g-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.02em}
+.g-head h2 em{font-style:italic;color:var(--accent)}
+.g-note{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.g-hint{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:20px}
+.graph-wrap{position:relative;width:100%;max-width:720px;aspect-ratio:1/1;margin:0 auto;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:radial-gradient(60% 60% at 50% 45%,#232329,var(--bg) 75%)}
+.g-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;pointer-events:none}
+.g-links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.g-links line{stroke:rgba(244,244,245,.42);stroke-width:1.1;transition:stroke .3s}
+.g-links line.on{stroke:#D4D8DD;stroke-width:1.4}
+.g-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:2}
+.g-ball{width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,#5A5A63,#34343B 70%);border:1.5px solid rgba(244,244,245,.55);display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease);box-shadow:0 4px 18px rgba(0,0,0,.45)}
+.g-node:hover .g-ball,.g-node.touch .g-ball{background:linear-gradient(145deg,#D4D8DD,#A8ADB6 70%);border-color:#F4F4F5;transform:scale(1.14);box-shadow:0 0 34px rgba(184,189,196,.5)}
+.g-ball img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.g-ball .tx{font-family:var(--serif);font-style:italic;font-size:18px;color:#D4D8DD}
+.g-node:hover .g-ball .tx,.g-node.touch .g-ball .tx{color:#111113}
+.g-label{margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;transition:color .3s;text-align:center;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.g-node:hover .g-label,.g-node.touch .g-label{color:var(--ink)}
+.g-core .g-ball{width:80px;height:80px;background:linear-gradient(145deg,#E0E4E9,#A8ADB6 60%,#7C828C);border-color:#F4F4F5;box-shadow:0 0 46px rgba(184,189,196,.4),inset 0 1px 0 rgba(255,255,255,.5)}
+.g-core .g-ball .tx{font-size:24px;color:#111113}
+.g-core .g-label{color:var(--ink)}
+@media(max-width:800px){.graph-wrap{max-width:390px}.g-ball{width:50px;height:50px}.g-core .g-ball{width:70px;height:70px}.g-label{font-size:9.5px}}
+.g-cap{display:flex;justify-content:space-between;margin-top:26px;gap:20px;flex-wrap:wrap}
+.g-cap p{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);max-width:560px}
+.g-cap .g-stat{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+/* flujo demostración */
+.demo{margin-top:70px;border:1px solid var(--line);border-radius:14px;padding:44px 40px;background:var(--bg)}
+.demo h3{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.4vw,30px);margin-bottom:8px}
+.demo h3 em{font-style:italic;color:var(--accent)}
+.demo .d-sub{font-size:13px;color:var(--muted);margin-bottom:34px;max-width:520px}
+.d-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+.d-step{border:1px solid var(--line);border-radius:12px;padding:26px 22px;background:var(--bg2)}
+.d-step .d-n{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);margin-bottom:12px}
+.d-step h4{font-family:var(--serif);font-weight:400;font-size:17px;margin-bottom:8px}
+.d-step p{font-size:13px;color:var(--muted);line-height:1.65}
+.d-step .d-tag{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+@media(max-width:800px){.d-steps{grid-template-columns:1fr}.demo{padding:32px 24px}}
+
 /* SERVICIOS — 3 rutas + capacidades */
 .services{padding:130px 0}
 .w-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:30px;flex-wrap:wrap}
@@ -219,7 +254,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 40px}
 html.js .rv{opacity:0;transform:translateY(52px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
 html.js .rv.vis{opacity:1;transform:none}
 html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js .rv-d3{transition-delay:.3s}
-@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-net{display:none}.hero:after{animation:none}}
+@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html.js .hl>span{transform:none;transition:none}.hero-net{display:none}}
 </style>
 </head>
 <body>
@@ -229,6 +264,7 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
 <nav id="nav">
   <a class="logo" href="#top">Johan Pantoja</a>
   <div class="nav-r" id="navMenu">
+    <a href="#sistemas">Sistemas</a>
     <a href="#servicios">Servicios</a>
     <a href="#trabajo">Casos</a>
     <a href="#testimonios">Testimonios</a>
@@ -242,10 +278,10 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
   <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="hero-kicker"><span class="dot"></span>Johan Pantoja — Consultor de IA</div>
-    <h1><span class="hl"><span>Sistemas de IA</span></span><span class="hl"><span>que <em class="g-word">trabajan por ti</em>.</span></span></h1>
-    <p class="hero-sub">Agentes y automatizaciones que <b>responden clientes, organizan conocimiento y publican contenido</b> — mientras tú haces lo que importa.</p>
+    <h1><span class="hl"><span>Creo <em>sistemas</em></span></span><span class="hl"><span>de IA.</span></span></h1>
+    <p class="hero-sub">Diseño <b>agentes, automatizaciones y segundos cerebros</b> para equipos que quieren ahorrar tiempo, organizar conocimiento y crecer.</p>
     <div class="hero-ctas">
-      <a class="btn btn-solid" href="#reserva">Agenda tu evaluación gratis de 20 min →</a>
+      <a class="btn btn-solid" href="https://wa.me/573012268929?text=Hola%20Johan%2C%20quiero%20evaluar%20mi%20proceso%20con%20IA" target="_blank" rel="noopener">Cuéntame qué quieres automatizar</a>
       <a class="btn btn-ghost" href="#trabajo">Ver casos con resultados</a>
     </div>
   </div>
@@ -259,6 +295,50 @@ html.js .rv-d1{transition-delay:.1s}html.js .rv-d2{transition-delay:.2s}html.js 
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">15M<sup>+</sup></div><div class="lbl">vistas orgánicas en <b>Instagram</b></div></a>
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">200K<sup>+</sup></div><div class="lbl"><b>seguidores</b> construidos orgánicamente</div></a>
       <a class="m" href="https://linkedin.com/in/jspantoja" target="_blank" rel="noopener"><div class="num">8M</div><div class="lbl">vistas en 1 mes — <b>Valentina Ríos</b> (100% IA)</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- GRÁFICA + DEMOSTRACIÓN -->
+<section class="graph" id="sistemas">
+  <div class="wrap">
+    <div class="g-head rv">
+      <h2>Mi <em>segundo cerebro</em><br>en acción</h2>
+      <span class="g-note">01 — Sistemas que construyo</span>
+    </div>
+    <div class="g-hint rv">Pasa el mouse (o toca) los nodos — así se conectan mis sistemas</div>
+    <div class="graph-wrap rv">
+      <img class="g-bg" src="cerebro-v2.webp" alt="" loading="lazy">
+      <svg class="g-links" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1="50" y1="50" x2="20" y2="22" id="l0"/><line x1="50" y1="50" x2="80" y2="24" id="l1"/>
+        <line x1="50" y1="50" x2="82" y2="68" id="l2"/><line x1="50" y1="50" x2="18" y2="70" id="l3"/>
+        <line x1="50" y1="50" x2="62" y2="14" id="l4"/><line x1="50" y1="50" x2="38" y2="84" id="l5"/>
+        <line x1="50" y1="50" x2="68" y2="84" id="l6"/><line x1="50" y1="50" x2="30" y2="16" id="l7"/>
+        <line x1="20" y1="22" x2="30" y2="16" id="l8"/><line x1="80" y1="24" x2="82" y2="68" id="l9"/>
+      </svg>
+      <div class="g-node g-core" style="left:50%;top:50%" data-links="l0 l1 l2 l3 l4 l5 l6 l7"><div class="g-ball"><span class="tx">IA</span></div><span class="g-label">Segundo cerebro</span></div>
+      <div class="g-node" style="left:25%;top:24%" data-links="l0 l8"><div class="g-ball"><img src="rosita.jpg" alt="ROSITA"></div><span class="g-label">ROSITA</span></div>
+      <div class="g-node" style="left:75%;top:26%" data-links="l1 l9"><div class="g-ball"><span class="tx">Ag</span></div><span class="g-label">Agentes</span></div>
+      <div class="g-node" style="left:77%;top:70%" data-links="l2 l9"><div class="g-ball"><span class="tx">Au</span></div><span class="g-label">Automatización</span></div>
+      <div class="g-node" style="left:23%;top:72%" data-links="l3"><div class="g-ball"><span class="tx">Ob</span></div><span class="g-label">Obsidian</span></div>
+      <div class="g-node" style="left:60%;top:18%" data-links="l4"><div class="g-ball"><span class="tx">Va</span></div><span class="g-label">Valentina</span></div>
+      <div class="g-node" style="left:38%;top:80%" data-links="l5"><div class="g-ball"><span class="tx">Cx</span></div><span class="g-label">Contenido</span></div>
+      <div class="g-node" style="left:64%;top:80%" data-links="l6"><div class="g-ball"><span class="tx">Mo</span></div><span class="g-label">Monitoreo</span></div>
+      <div class="g-node" style="left:32%;top:18%" data-links="l7 l8"><div class="g-ball"><span class="tx">Ca</span></div><span class="g-label">Canales</span></div>
+    </div>
+    <div class="g-cap rv">
+      <p>Un ecosistema conectado: asistentes, agentes, automatizaciones y conocimiento organizado trabajando juntos.</p>
+      <span class="g-stat">Obsidian · Agentes · Automatización</span>
+    </div>
+    <!-- DEMOSTRACIÓN CONCRETA -->
+    <div class="demo rv">
+      <h3>Cómo funciona <em>en la práctica</em></h3>
+      <p class="d-sub">Un ejemplo real de mi segundo cerebro: así se conectan las piezas cuando llega información.</p>
+      <div class="d-steps">
+        <div class="d-step"><div class="d-n">PASO 01</div><h4>Entra por Telegram</h4><p>Una reunión, una nota de voz o un artículo llegan directo a mi asistente ROSITA.</p><span class="d-tag">Telegram</span></div>
+        <div class="d-step"><div class="d-n">PASO 02</div><h4>ROSITA lo procesa</h4><p>Resume, extrae lo importante y lo conecta con el conocimiento que ya existe.</p><span class="d-tag">Agente IA</span></div>
+        <div class="d-step"><div class="d-n">PASO 03</div><h4>Genera tareas y contenido</h4><p>Quedan organizadas las notas en Obsidian, las tareas y el contenido listo para publicar.</p><span class="d-tag">Obsidian · Automatización</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -492,6 +572,17 @@ setTimeout(()=>{document.querySelectorAll('.hl>span').forEach((el,i)=>setTimeout
 /* reveals (solo con JS activo) */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* nodos */
+document.querySelectorAll('.g-node').forEach(node=>{
+  const lines=node.dataset.links.split(' ');
+  const on=()=>lines.forEach(id=>document.getElementById(id).classList.add('on'));
+  const off=()=>lines.forEach(id=>document.getElementById(id).classList.remove('on'));
+  node.addEventListener('mouseenter',on);
+  node.addEventListener('mouseleave',off);
+  node.addEventListener('touchstart',()=>{node.classList.add('touch');on()},{passive:true});
+  node.addEventListener('touchend',()=>setTimeout(()=>{node.classList.remove('touch');off()},1400));
+});
 
 /* casos de estudio */
 const casos={
