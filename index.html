@@ -111,7 +111,9 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 @media(max-width:900px){.m-row{grid-template-columns:repeat(2,1fr);gap:28px 18px}.m{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-bottom:22px}.m:nth-last-child(-n+2){border-bottom:none}}
 
 /* SOBRE MÍ */
-.about{padding:clamp(88px,10vw,136px) 0;background:var(--bg);border-bottom:1px solid var(--line)}
+.about{position:relative;padding:96px 0 104px;background:var(--bg);border-bottom:1px solid var(--line)}
+.about::before{content:"01";position:absolute;top:24px;right:max(40px,calc((100vw - 1120px)/2));color:rgba(154,153,255,.08);font-family:var(--serif);font-size:clamp(72px,10vw,150px);font-style:italic;line-height:1;pointer-events:none}
+@media(max-width:800px){.about{padding:72px 0 80px}.about::before{top:18px;right:22px;font-size:78px}}
 .about-grid{display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:center}
 .about-photo{position:relative}
 .about-photo::before{content:"";position:absolute;inset:-12px;border-radius:30px;background:radial-gradient(circle at 30% 25%,rgba(113,112,255,.38),transparent 62%);filter:blur(26px);z-index:-1}
@@ -121,16 +123,26 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 .about h2 em{font-style:italic;color:var(--accent)}
 .about-text{font-size:16px;color:var(--muted);line-height:1.78;max-width:660px}
 .about-text b{color:var(--ink);font-weight:500}
+.about-lead{max-width:620px;color:var(--ink);font-family:var(--serif);font-size:clamp(19px,2vw,25px);line-height:1.45}
+.about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.about-fact{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+.fact-n{display:block;margin-bottom:10px;color:#9A99FF;font-family:var(--mono);font-size:10px;letter-spacing:.14em}
+.about-fact p{color:var(--muted);font-size:13px;line-height:1.55}
+.about-fact b{color:var(--ink);font-weight:500}
+.about-principle{margin-top:24px;padding-left:18px;border-left:2px solid #7170ff;color:var(--accent-d);font-family:var(--serif);font-size:17px;font-style:italic}
+@media(max-width:700px){.about-facts{grid-template-columns:1fr}}
 .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .a-chip{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#D4D4D8;border:1px solid var(--line);border-radius:10px;padding:9px 15px;background:var(--bg2)}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:44px}.about-photo{max-width:340px}}
 
 /* SERVICIOS — 3 rutas + capacidades */
-.services{padding:clamp(88px,10vw,136px) 0;background:radial-gradient(100% 50% at 50% 0%,#16161A 0%,var(--bg) 55%)}
+.services{padding:104px 0 78px;background:radial-gradient(100% 50% at 50% 0%,#16161A 0%,var(--bg) 55%)}
 .w-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:30px;flex-wrap:wrap}
 .w-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.02em}
 .w-head h2 em{font-style:italic;color:var(--accent)}
 .w-note{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.section-bridge{display:flex;align-items:center;gap:16px;margin-bottom:42px;color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.section-bridge::before{content:"";width:52px;height:1px;background:#7170ff}
 .w-sub{font-size:14px;color:var(--muted);max-width:560px;margin-bottom:44px}
 .routes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:60px}
 .route{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:32px 28px;display:flex;flex-direction:column;transition:all .4s var(--ease)}
@@ -139,7 +151,11 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 .route h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2;margin-bottom:12px}
 .route .r-for{font-size:12px;font-family:var(--mono);color:var(--accent);margin-bottom:10px}
 .route p{font-size:13.5px;color:var(--muted);line-height:1.65}
-.route .r-deliver{margin-top:auto;padding-top:16px;font-size:12.5px;color:var(--ink)}
+.route-list{display:grid;gap:9px;margin:18px 0 22px;list-style:none}
+.route-list li{position:relative;padding-left:16px;color:var(--muted);font-size:13.5px;line-height:1.5}
+.route-list li::before{content:"";position:absolute;top:.65em;left:0;width:5px;height:5px;border-radius:50%;background:#7170ff;box-shadow:0 0 8px rgba(113,112,255,.55)}
+.route .r-deliver{margin-top:auto;padding-top:16px;font-size:12.5px;color:var(--ink);border-top:1px solid var(--line)}
+.route .r-deliver span{display:block;margin-bottom:6px;color:#9A99FF;font-family:var(--mono);font-size:9px;letter-spacing:.16em}
 .route .r-deliver b{color:var(--accent);font-weight:500}
 .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
 .cap{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:13.5px;color:var(--muted);transition:all .3s;background:var(--bg2)}
@@ -148,7 +164,9 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 @media(max-width:900px){.routes{grid-template-columns:1fr}.caps{grid-template-columns:1fr}}
 
 /* TRABAJO / CASOS */
-.work{padding:clamp(88px,10vw,136px) 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.work{position:relative;padding:92px 0 108px;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.work::before{content:"";display:block;width:min(1120px,calc(100% - 44px));height:1px;margin:-42px auto 72px;background:linear-gradient(90deg,transparent,rgba(113,112,255,.4),transparent)}
+@media(max-width:800px){.services{padding:76px 0 60px}.work{padding:72px 0 80px}.work::before{margin:-28px auto 52px}}
 .w-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px 40px}
 .w-item{display:block;cursor:pointer;background:none;border:none;padding:0;font:inherit;text-align:left;width:100%;color:inherit}
 .w-visual{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--bg3);border-radius:10px;box-shadow:inset 0 -48px 48px -32px rgba(0,0,0,.45)}
@@ -189,6 +207,14 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 .m-sec ul{list-style:none}
 .m-sec li{padding-left:16px;position:relative;margin-bottom:6px}
 .m-sec li:before{content:"—";position:absolute;left:0;color:var(--accent)}
+.m-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.m-step{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--bg3)}
+.m-step > span{color:#9A99FF;font-family:var(--mono);font-size:10px;letter-spacing:.12em}
+.m-step h4{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:10px 0 8px}
+.m-step p{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0}
+.m-tools{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.m-tools span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-family:var(--mono);font-size:10.5px}
+@media(max-width:650px){.m-steps{grid-template-columns:1fr}}
 .m-result{background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:22px 0;display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
 .m-result .r-num{font-family:var(--serif);font-weight:300;font-size:38px;color:var(--accent);letter-spacing:-.02em}
 .m-result .r-lbl{font-size:12.5px;color:var(--muted);max-width:220px}
@@ -202,7 +228,8 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 .t-card:hover{border-color:rgba(244,244,245,.3);transform:translateY(-2px)}
 .t-card.t-feat{border-color:rgba(113,112,255,.3);background:linear-gradient(180deg,var(--bg3),var(--bg2))}
 .t-result{font-family:var(--mono);font-size:12px;color:#9A99FF;letter-spacing:.05em;padding-top:14px;border-top:1px dashed rgba(255,255,255,.09)}
-.t-card .t-quote{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.65;color:var(--ink)}
+.t-card .t-quote{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.65;color:var(--ink);max-width:34ch}
+.t-result{margin-top:auto}
 .t-card .t-who{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .t-card .t-role{font-size:12px;color:var(--accent)}
 @media(max-width:900px){.t-grid{grid-template-columns:1fr}}
@@ -243,16 +270,19 @@ html.reveal-ready .hl>span.show{transform:translateY(0)}
 @media(max-width:800px){.reserva-grid{grid-template-columns:1fr;gap:34px}.r-form .f-row{grid-template-columns:1fr}}
 
 /* CONTACTO */
-.cta{padding:clamp(96px,11vw,150px) 0 clamp(72px,8vw,120px)}
+.cta{position:relative;overflow:hidden;padding:clamp(96px,11vw,150px) 0 clamp(78px,8vw,120px);background:radial-gradient(circle at 82% 18%,rgba(255,122,217,.3),transparent 34%),linear-gradient(125deg,#302D8F 0%,#5B3FC4 56%,#7A3FA0 100%);color:#fff}
+.cta::before{content:"";position:absolute;inset:1px;border:1px solid rgba(255,255,255,.12);pointer-events:none}
 .cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,9vw,132px);line-height:.95;letter-spacing:-.04em}
-.cta h2 em{font-style:italic;color:var(--accent)}
-.cta-micro{margin-top:22px;font-size:15px;color:var(--muted);max-width:420px}
+.cta h2 em{font-style:italic;color:#FFFFFF;text-shadow:0 0 36px rgba(255,255,255,.18)}
+.cta-micro{margin-top:22px;font-size:15px;color:#E7E3FF;max-width:420px}
 .cta-foot{display:flex;justify-content:space-between;align-items:center;margin-top:48px;gap:30px;flex-wrap:wrap}
 .cta-links{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
-.cta-links a{font-size:14.5px;color:var(--muted);display:inline-flex;align-items:center;gap:10px;padding-bottom:3px;border-bottom:1px solid transparent;transition:all .3s}
-.cta-links a:hover{color:var(--ink);border-color:var(--accent)}
-.cta-links .ic{font-size:16px;color:var(--accent);transition:transform .3s}
+.cta-links a{font-size:14.5px;color:#E7E3FF;display:inline-flex;align-items:center;gap:10px;padding-bottom:3px;border-bottom:1px solid transparent;transition:all .3s}
+.cta-links a:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+.cta-links .ic{font-size:16px;color:#FFFFFF;transition:transform .3s}
 .cta-links a:hover .ic{transform:translateX(3px)}
+.cta .btn-solid{background:#FFFFFF;color:#241F63;box-shadow:0 16px 46px rgba(20,15,70,.3)}
+.cta .btn-solid:hover{background:#F2EFFF;color:#241F63;box-shadow:0 20px 56px rgba(20,15,70,.42)}
 footer{border-top:1px solid var(--line);padding:34px 0 40px}
 .foot-in{display:flex;justify-content:space-between;font-size:12px;color:var(--faint);gap:20px;flex-wrap:wrap}
 
@@ -317,13 +347,17 @@ html.reveal-ready .rv-d1{transition-delay:.1s}html.reveal-ready .rv-d2{transitio
       <div class="about-body rv rv-d1">
         <span class="about-note">01 — Quién soy</span>
         <h2>Quién <em>soy</em></h2>
-        <p class="about-text">Soy Johan Pantoja, <b>profesional en negocios internacionales con especialización en IA</b> y experiencia como empresario. Pasé años creando contenido que hoy suma más de <b>30 millones de vistas en TikTok</b> y 15 en Instagram — eso me enseñó qué necesita una marca para crecer. Hoy diseño agentes y automatizaciones para negocios reales y capacito equipos para aplicar IA desde la semana uno. Mi regla: la IA no reemplaza personas, reemplaza tareas repetitivas.</p>
+        <p class="about-lead">Combino negocios, creación de contenido e inteligencia artificial para construir sistemas que resuelven problemas reales.</p>
+        <div class="about-facts">
+          <div class="about-fact"><span class="fact-n">01</span><p><b>Visión de negocio</b><br>Profesional en Negocios Internacionales y empresario.</p></div>
+          <div class="about-fact"><span class="fact-n">02</span><p><b>Experiencia comprobada</b><br>Más de 30M de vistas en TikTok y 15M en Instagram.</p></div>
+          <div class="about-fact"><span class="fact-n">03</span><p><b>IA aplicada</b><br>Diseño agentes, automatizaciones y capacitaciones para equipos.</p></div>
+        </div>
+        <p class="about-principle">“La IA no reemplaza personas. Reemplaza tareas repetitivas.”</p>
         <div class="about-chips">
-          <span class="a-chip">Empresario</span>
-          <span class="a-chip">Negocios internacionales</span>
-          <span class="a-chip">Especialista en IA</span>
-          <span class="a-chip">30M+ vistas TikTok</span>
-          <span class="a-chip">Capacitador</span>
+          <span class="a-chip">Negocios</span>
+          <span class="a-chip">IA aplicada</span>
+          <span class="a-chip">Capacitación</span>
         </div>
       </div>
     </div>
@@ -333,15 +367,22 @@ html.reveal-ready .rv-d1{transition-delay:.1s}html.reveal-ready .rv-d2{transitio
 <!-- SERVICIOS: 3 rutas + capacidades -->
 <section class="services" id="servicios">
   <div class="wrap">
+    <p class="section-bridge rv">De la experiencia al sistema: tres formas de aplicar IA en tu operación.</p>
     <div class="w-head rv">
       <h2>Servicios</h2>
       <span class="w-note">02 — Cómo te ayudo</span>
     </div>
     <p class="w-sub rv">Diseño e implemento sistemas de IA para equipos que quieren automatizar operaciones, organizar conocimiento y producir contenido.</p>
     <div class="routes">
-      <div class="route rv"><span class="r-n">RUTA 01</span><h3>Sistemas y automatización</h3><span class="r-for">Para equipos que pierden horas moviendo información a mano</span><p>Diseño el flujo, construyo el agente y dejo documentada su operación.</p><div class="r-deliver"><b>Entrego:</b> agentes, bots y flujos trabajando 24/7</div></div>
-      <div class="route rv rv-d1"><span class="r-n">RUTA 02</span><h3>Capacitación para equipos</h3><span class="r-for">Para empresas que quieren adoptar IA sin depender de nadie</span><p>Talleres y programas prácticos para que tu equipo aplique IA desde la semana uno.</p><div class="r-deliver"><b>Entrego:</b> equipos autónomos y procesos rediseñados</div></div>
-      <div class="route rv rv-d2"><span class="r-n">RUTA 03</span><h3>Contenido y crecimiento con IA</h3><span class="r-for">Para marcas que quieren presencia constante sin costos de producción</span><p>Personajes virtuales, pipelines de contenido y estrategia con métricas reales.</p><div class="r-deliver"><b>Entrego:</b> contenido escalable con resultados medibles</div></div>
+      <div class="route rv"><span class="r-n">RUTA 01</span><h3>Sistemas y automatización</h3><span class="r-for">Si tu equipo mueve información a mano</span>
+          <ul class="route-list"><li>Mapeo el proceso.</li><li>Construyo el agente o flujo.</li><li>Documento su operación.</li></ul>
+          <div class="r-deliver"><span>RESULTADO</span>Agentes y automatizaciones operando 24/7.</div></div>
+      <div class="route rv rv-d1"><span class="r-n">RUTA 02</span><h3>Capacitación para equipos</h3><span class="r-for">Si quieren adoptar IA con autonomía</span>
+          <ul class="route-list"><li>Trabajamos sobre procesos reales.</li><li>Probamos herramientas aplicables.</li><li>Definimos un plan de implementación.</li></ul>
+          <div class="r-deliver"><span>RESULTADO</span>Un equipo capaz de aplicar IA desde la primera semana.</div></div>
+      <div class="route rv rv-d2"><span class="r-n">RUTA 03</span><h3>Contenido y crecimiento con IA</h3><span class="r-for">Si tu marca necesita publicar con constancia</span>
+          <ul class="route-list"><li>Diseño el sistema de producción.</li><li>Creo personajes o formatos escalables.</li><li>Mido y ajusto la estrategia.</li></ul>
+          <div class="r-deliver"><span>RESULTADO</span>Contenido constante con métricas verificables.</div></div>
     </div>
     <div class="caps">
       <a class="cap rv" href="#contacto"><span class="c-n">→</span>Consultoría estratégica en IA</a>
@@ -396,8 +437,8 @@ html.reveal-ready .rv-d1{transition-delay:.1s}html.reveal-ready .rv-d2{transitio
     </div>
     <div class="t-grid">
       <div class="t-card rv t-feat"><p class="t-quote">“El taller de Johan me cambió la forma de trabajar: en dos semanas ya estaba automatizando tareas que me tomaban horas. Explica la IA en cristiano.”</p><div class="t-result">2 semanas → tareas automatizadas</div><span class="t-who">— Estefanía</span><span class="t-role">Estudiante · Taller de IA aplicada</span></div>
-      <div class="t-card rv rv-d1"><p class="t-quote">“Llegué sin saber por dónde empezar con la IA y salí con un plan claro para mi negocio. La capacitación es práctica, no teoría.”</p><span class="t-who">— Jair</span><span class="t-role">Emprendedor · Capacitación 1 a 1</span></div>
-      <div class="t-card rv rv-d2"><p class="t-quote">“Con la asesoría de Johan logramos introducir la IA en nuestros procesos: hoy un agente responde a nuestros clientes y el equipo ahorra horas cada día.”</p><span class="t-who">— Víctor</span><span class="t-role">Empresa · Adopción de IA</span></div>
+      <div class="t-card rv rv-d1"><p class="t-quote">“Llegué sin saber por dónde empezar con la IA y salí con un plan claro para mi negocio. La capacitación es práctica, no teoría.”</p><div class="t-result">De cero → plan claro para el negocio</div><span class="t-who">— Jair</span><span class="t-role">Emprendedor · Capacitación 1 a 1</span></div>
+      <div class="t-card rv rv-d2"><p class="t-quote">“Con la asesoría de Johan logramos introducir la IA en nuestros procesos: hoy un agente responde a nuestros clientes y el equipo ahorra horas cada día.”</p><div class="t-result">Agente activo → horas recuperadas cada día</div><span class="t-who">— Víctor</span><span class="t-role">Empresa · Adopción de IA</span></div>
     </div>
   </div>
 </section>
@@ -579,20 +620,17 @@ valentina:{k:'CASO 01 — VALENTINA RÍOS',t:'Una influencer virtual <em>100% IA
 ['El problema','Las marcas necesitan presencia constante en redes, pero producir contenido real cuesta tiempo, equipo y dinero. Casi nadie sostiene un calendario de publicación.'],
 ['Qué hice','Creé Valentina Ríos: una influencer virtual generada íntegramente con IA. Diseñé su identidad, su sistema de producción y el flujo completo de publicación.'],
 ['Cómo funciona','Un pipeline de IA genera imagen, voz y video; el sistema mantiene la coherencia del personaje y publica con ritmo constante, sin un equipo de producción detrás.'],
-['Herramientas','IA de imagen y video, generación de voz, automatización de publicación y estrategia de contenido.'],
-],result:['8M','vistas en un mes — crecimiento orgánico'],cta:'¿Quieres un personaje virtual para tu marca?'},
+],tools:['Imagen IA','Video IA','Voz sintética','Automatización'],result:['8M','vistas en un mes — crecimiento orgánico'],cta:'¿Quieres un personaje virtual para tu marca?'},
 taller:{k:'CASO 02 — TALLER DE IMPLEMENTACIÓN',t:'Taller práctico de <em>IA para negocios</em>',sections:[
 ['El problema','Equipos que saben que la IA cambia todo, pero no saben por dónde empezar ni cómo aplicarla a su operación real.'],
 ['Qué hice','Diseñé e impartí un taller de implementación: los asistentes llegan con un proceso real de su empresa y salen con un plan concreto de automatización.'],
 ['Cómo funciona','Sesiones prácticas donde cada participante identifica tareas repetitivas, diseña el flujo con IA y valida la herramienta antes de terminar el taller.'],
-['Herramientas','Mapeo de procesos, agentes conversacionales, automatizaciones y casos reales de la industria.'],
-],result:['100%','participantes con plan de implementación al salir'],cta:'¿Llevo el taller a tu equipo?'},
+],tools:['Mapeo de procesos','Agentes','Automatización','Casos de industria'],result:['100%','participantes con plan de implementación al salir'],cta:'¿Llevo el taller a tu equipo?'},
 rosita:{k:'CASO 03 — ROSITA',t:'Mi asistente personal <em>siempre activa</em>',sections:[
 ['El problema','Información dispersa en reuniones, notas, chats y documentos. Perder ideas y tareas cuesta tiempo y oportunidades.'],
 ['Qué hice','Construí ROSITA: una asistente de IA con memoria que vive en Telegram, conectada a mi segundo cerebro en Obsidian.'],
 ['Cómo funciona','Le envías una reunión, una nota de voz o un enlace: ROSITA resume, conecta con el conocimiento existente y genera tareas y contenido listos para usar.'],
-['Herramientas','Agentes de IA, Obsidian, Telegram, automatizaciones y un sistema de memoria persistente.'],
-],result:['24/7','sistema operativo — cero fricción'],cta:'¿Te construyo tu propio ROSITA?'},
+],tools:['Agentes IA','Obsidian','Telegram','Memoria persistente'],result:['24/7','sistema operativo — cero fricción'],cta:'¿Te construyo tu propio ROSITA?'},
 agentes:{k:'CASO — AGENTES PARA NEGOCIOS',t:'Agentes que <em>trabajan por tu equipo</em>',sections:[
 ['Qué entrego','Bots y agentes que responden clientes, investigan, mueven información y ejecutan tareas repetitivas — documentados y operando 24/7.'],
 ],result:['Horas','ahorradas cada semana'],cta:'Cuéntame qué proceso quieres automatizar'},
@@ -608,7 +646,8 @@ let lastFocus=null;
 function openModal(k){const c=casos[k];if(!c)return;
   lastFocus=document.activeElement;
   mContent.innerHTML='<div class="m-kicker">'+c.k+'</div><h3 id="mTitle">'+c.t+'</h3>'+
-    c.sections.map(s=>'<div class="m-sec"><h4>'+s[0]+'</h4><p>'+s[1]+'</p></div>').join('')+
+    '<div class="m-steps">'+c.sections.slice(0,3).map((s,i)=>'<div class="m-step"><span>0'+(i+1)+'</span><h4>'+s[0]+'</h4><p>'+s[1]+'</p></div>').join('')+'</div>'+
+    (c.tools?'<div class="m-tools">'+c.tools.map(t=>'<span>'+t+'</span>').join('')+'</div>':'')+
     '<div class="m-result"><span class="r-num">'+c.result[0]+'</span><span class="r-lbl">'+c.result[1]+'</span></div>'+
     '<a class="btn btn-solid m-cta" href="https://wa.me/573012268929?text=Hola%20Johan%2C%20'+encodeURIComponent(c.cta)+'" target="_blank" rel="noopener">'+c.cta+'</a>';
   modal.classList.add('open');document.body.style.overflow='hidden';const cBtn=modal.querySelector('.modal-close');if(cBtn)cBtn.focus();}
