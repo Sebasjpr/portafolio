@@ -1,0 +1,17 @@
+{
+  "name": "Johan Pantoja — Capacitaciones en IA",
+  "short_name": "Johan Pantoja",
+  "description": "Capacitaciones y conferencias de inteligencia artificial. Cali, Colombia.",
+  "start_url": "/portafolio/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/portafolio/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "scope": "/portafolio/"
+}
