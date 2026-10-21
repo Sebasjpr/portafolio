@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /
+
+Host: https://sebasjpr.github.io/portafolio
+Sitemap: https://sebasjpr.github.io/portafolio/sitemap.xml
