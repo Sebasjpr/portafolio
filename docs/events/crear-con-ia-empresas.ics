@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Johan Pantoja//Eventos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crear-ia-empresas-20261119@sebasjpr.github.io
+DTSTAMP:20261118T191228Z
+DTSTART:20261120T000000Z
+DTEND:20261120T020000Z
+SUMMARY:El poder de crear con IA para empresas
+DESCRIPTION:Webinar virtual y gratuito con Johan Sebastián Pantoja.\nRegí
+ strate en Luma para recibir las indicaciones de acceso: https://luma.com/z
+ bv6sb0m
+LOCATION:Virtual - Google Meet (registro en Luma)
+URL:https://luma.com/zbv6sb0m
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
